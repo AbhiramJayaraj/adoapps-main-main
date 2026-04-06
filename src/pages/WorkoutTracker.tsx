@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileLayout from "@/components/MobileLayout";
 import ProgressRing from "@/components/ProgressRing";
+import { WorkoutCamera } from "@/components/WorkoutCamera";
 
 interface Exercise {
   name: string;
@@ -95,6 +96,9 @@ const WorkoutTracker = () => {
             </div>
           </div>
         </div>
+        
+        {/* Live AI Camera Setup */}
+        <WorkoutCamera isActive={isWorkoutActive} />
 
         {/* Start/Stop Button */}
         <button

@@ -2,6 +2,7 @@ import { ChevronLeft, Bell, MoreVertical, UtensilsCrossed, BarChart3, ChevronDow
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileLayout from "@/components/MobileLayout";
+import { FoodScanner } from "@/components/FoodScanner";
 
 const days = [
   { date: 2, day: "MON", month: "MAR" },
@@ -133,10 +134,24 @@ const DietTracker = () => {
                   onClick={() => setExpandedMeal(expandedMeal === index ? null : index)}
                   className="flex items-center gap-1 text-[10px] text-muted-foreground"
                 >
-                  <ImageIcon className="h-3 w-3" /> Add Image & More
+                  <ImageIcon className="h-3 w-3" /> Add AI Diet Image
                   <ChevronDown className={`h-3 w-3 transition-transform ${expandedMeal === index ? "rotate-180" : ""}`} />
                 </button>
               </div>
+              
+              {expandedMeal === index && (
+                <FoodScanner 
+                  onCancel={() => setExpandedMeal(null)}
+                  onScanComplete={(result) => {
+                    const parsedFoodStr = `${result.meal} (${result.calories}kcal)`;
+                    setMealFoods((prev) => ({
+                      ...prev,
+                      [index]: [...(prev[index] || []), parsedFoodStr],
+                    }));
+                    setExpandedMeal(null);
+                  }}
+                />
+              )}
             </div>
           ))}
         </div>
