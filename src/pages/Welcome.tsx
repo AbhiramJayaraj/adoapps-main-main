@@ -165,7 +165,7 @@ const Welcome = () => {
               <div className="flex h-24 w-24 items-center justify-center rounded-3xl bg-foreground mb-6">
                 <Dumbbell className="h-12 w-12 text-background" />
               </div>
-              <h1 className="text-3xl font-black tracking-tight">Ado Work</h1>
+              <h1 className="text-3xl font-black tracking-tight">Viora Ai</h1>
               <p className="mt-2 text-xs text-muted-foreground max-w-xs">
                 Your personal fitness companion. Let's set up your profile.
               </p>

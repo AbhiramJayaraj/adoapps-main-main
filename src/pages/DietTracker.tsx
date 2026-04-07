@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileLayout from "@/components/MobileLayout";
 import { FoodScanner } from "@/components/FoodScanner";
+import { VioraChatbot } from "@/components/VioraChatbot";
+import { Flame } from "lucide-react";
 
 const days = [
   { date: 2, day: "MON", month: "MAR" },
@@ -26,6 +28,8 @@ const DietTracker = () => {
   const [selectedDay, setSelectedDay] = useState(8);
   const [expandedMeal, setExpandedMeal] = useState<number | null>(null);
   const [mealFoods, setMealFoods] = useState<Record<number, string[]>>({});
+  const [isVioraOpen, setIsVioraOpen] = useState(false);
+  const [totalCalories, setTotalCalories] = useState(0);
 
   const addFood = (mealIndex: number) => {
     const food = prompt("Enter food name:");
@@ -79,7 +83,7 @@ const DietTracker = () => {
                 <UtensilsCrossed className="h-5 w-5 text-muted-foreground" />
               </div>
               <div>
-                <p className="text-sm font-bold">0 out of 2784.65</p>
+                <p className="text-sm font-bold">{totalCalories} out of 2000</p>
                 <p className="text-[10px] text-muted-foreground">Calories Consumed</p>
               </div>
             </div>
@@ -94,6 +98,13 @@ const DietTracker = () => {
             <ChevronDown className="h-4 w-4 text-muted-foreground" />
           </div>
         </div>
+
+        <button
+          onClick={() => setIsVioraOpen(true)}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-bold transition-transform active:scale-95 gym-gradient-orange text-primary-foreground shadow-[0_0_15px_rgba(249,115,22,0.4)]"
+        >
+          <Flame className="h-5 w-5 fill-current" /> Auto-Track with Viora AI
+        </button>
 
         {/* Meals */}
         <div className="mt-4 space-y-3 pb-4">
@@ -156,6 +167,15 @@ const DietTracker = () => {
           ))}
         </div>
       </div>
+      
+      {isVioraOpen && (
+        <VioraChatbot
+          onClose={() => setIsVioraOpen(false)}
+          onAddCalories={(kcal) => setTotalCalories(prev => prev + kcal)}
+          targetCalories={2000}
+          consumedCalories={totalCalories}
+        />
+      )}
     </MobileLayout>
   );
 };

@@ -96,7 +96,7 @@ const Community = () => {
   const toggleSave = (id: number) => setTips(prev => prev.map(t => t.id === id ? { ...t, saved: !t.saved } : t));
 
   const copyInvite = () => {
-    navigator.clipboard.writeText(`Join me on Ado Work! Code: ${savedInvite}\nhttps://adowork.app/invite/${savedInvite}`);
+    navigator.clipboard.writeText(`Join me on Viora Ai! Code: ${savedInvite}\nhttps://viora.ai/invite/${savedInvite}`);
     setCopied(true);
     toast({ title: "Invite link copied!" });
     setTimeout(() => setCopied(false), 2000);
@@ -104,7 +104,7 @@ const Community = () => {
 
   const shareInvite = async () => {
     if (navigator.share) {
-      await navigator.share({ title: "Join Ado Work!", text: `Join me on Ado Work! Code: ${savedInvite}`, url: `https://adowork.app/invite/${savedInvite}` });
+      await navigator.share({ title: "Join Viora Ai!", text: `Join me on Viora Ai! Code: ${savedInvite}`, url: `https://viora.ai/invite/${savedInvite}` });
     } else copyInvite();
   };
 

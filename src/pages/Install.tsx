@@ -56,9 +56,9 @@ const Install = () => {
         {/* Hero */}
         <div className="mt-6 flex flex-col items-center text-center">
           <div className="flex h-24 w-24 items-center justify-center rounded-3xl gym-gradient-orange shadow-lg">
-            <img src="/pwa-icon-192.png" alt="Ado Work" className="h-20 w-20 rounded-2xl" />
+            <img src="/pwa-icon-192.png" alt="Viora Ai" className="h-20 w-20 rounded-2xl" />
           </div>
-          <h2 className="mt-4 text-xl font-black">Ado Work</h2>
+          <h2 className="mt-4 text-xl font-black">Viora Ai</h2>
           <p className="text-xs text-muted-foreground mt-1">Install on your phone for the best experience</p>
         </div>
 
@@ -68,7 +68,7 @@ const Install = () => {
               <CheckCircle className="h-8 w-8 text-primary" />
             </div>
             <h3 className="text-base font-bold">Already Installed! 🎉</h3>
-            <p className="text-xs text-muted-foreground">Ado Work is on your home screen. Open it from there for the full experience.</p>
+            <p className="text-xs text-muted-foreground">Viora Ai is on your home screen. Open it from there for the full experience.</p>
           </div>
         ) : (
           <>
@@ -76,7 +76,7 @@ const Install = () => {
             {deferredPrompt && (
               <button onClick={handleInstall}
                 className="mt-6 flex w-full items-center justify-center gap-2 rounded-2xl gym-gradient-orange py-4 text-sm font-bold text-primary-foreground active:scale-95 transition-transform">
-                <Download className="h-5 w-5" /> Install Ado Work
+                <Download className="h-5 w-5" /> Install Viora Ai
               </button>
             )}
 

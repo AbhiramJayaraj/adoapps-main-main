@@ -98,7 +98,7 @@ const Index = () => {
         const now = new Date();
         const [h, m] = r.time.split(":").map(Number);
         if (now.getHours() === h && now.getMinutes() === m && now.getSeconds() === 0) {
-          if ("Notification" in window && Notification.permission === "granted") new Notification("Ado Work Reminder", { body: r.label });
+          if ("Notification" in window && Notification.permission === "granted") new Notification("Viora Ai Reminder", { body: r.label });
         }
       }, 1000);
       intervals.push(iv);
@@ -161,7 +161,7 @@ const Index = () => {
             <TrendingUp className="h-4 w-4 text-primary" />
             <span className="text-[10px] font-bold">Lvl {userLevel}</span>
           </button>
-          <h1 className="text-lg font-bold">Ado Work</h1>
+          <h1 className="text-lg font-bold">Viora Ai</h1>
           <div className="flex items-center gap-2">
             <button onClick={() => navigate("/install")} className="rounded-full border border-border p-2 transition-transform active:scale-95">
               <Download className="h-4 w-4" />
