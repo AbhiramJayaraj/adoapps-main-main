@@ -1,73 +1,110 @@
-# Welcome to your Lovable project
+VioraAI — Next-Generation AI Assistant
+Hackathon Submission · Problem Statement 4: Next-Generation AI Assistants
+VioraAI is a context-aware, multi-domain AI assistant platform powered by Google Gemini API — built for education, business, and everyday productivity.
+🔗 Live Demo: vioraai-two.vercel.app/welcome
+🧠 Problem Statement
+Existing AI tools lack:
+Contextual understanding — conversations feel disconnected and stateless
+Adaptability — rigid responses that ignore user intent or domain
+Accessibility — interfaces too complex for non-technical users
+Workflow integration — single-purpose tools that can't chain actions
+💡 Solution — VioraAI
+VioraAI closes this gap with a fluid, intelligent assistant that:
+Maintains full conversational context across every message
+Adapts its tone and format based on query type (academic, casual, business)
+Streams responses in real time for a natural, human-like feel
+Runs on a zero-friction UI accessible to all users
+✨ Features
+Feature
+Description
+🤖 Contextual AI Chat
+Multi-turn conversations with full session memory via Gemini
+⚡ Real-Time Streaming
+Token-by-token response streaming for instant feedback
+🎨 Clean UI
+shadcn/ui + Tailwind CSS — responsive on mobile and desktop
+🌐 Multi-Domain
+Education, business, and everyday use in one assistant
+🚪 Welcome Onboarding
+Smooth /welcome screen for first-time users
+🔧 TypeScript
+Fully typed codebase for reliability and scalability
+🤖 Google AI Usage
+Tools / Models Used
+Google Gemini API — core language model
+Gemini Flash / Pro — optimised for fast multi-turn dialogue
+Google AI Studio — prompt engineering and API key management
+How AI Is Integrated
+Conversational Engine — Full chat history is passed to Gemini on every request, enabling coherent multi-turn understanding
+System Prompt Layer — A carefully engineered system prompt defines VioraAI's persona, tone, and behaviour
+Streaming Responses — Uses Gemini's streaming API so users see answers forming in real time
+Adaptive Intelligence — Gemini self-selects response format (bullets, prose, structured) based on query context
+🛠️ Tech Stack
+Layer
+Technology
+Frontend
+React 18 + TypeScript
+Build Tool
+Vite
+Styling
+Tailwind CSS
+UI Components
+shadcn/ui
+AI Model
+Google Gemini API
+Package Manager
+Bun / npm
+Deployment
+Vercel
+🚀 Getting Started
+Prerequisites
+Node.js 18+ or Bun
+A Google Gemini API key from aistudio.google.com
+Installation
+# 1. Clone the repo
+git clone https://github.com/AbhiramJayaraj/adoapps-main-main.git
+cd adoapps-main-main
 
-## Project info
+# 2. Install dependencies
+npm install
+# or
+bun install
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+# 3. Set up environment variables
+echo "VITE_GEMINI_API_KEY=your_api_key_here" > .env
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start the dev server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+App runs at http://localhost:5173
+Build for Production
+npm run build
+npm run preview
+📁 Project Structure
+adoapps-main-main/
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable UI components (shadcn/ui)
+│   ├── pages/               # Route-level components
+│   │   ├── Welcome.tsx      # Onboarding screen (/welcome)
+│   │   └── Assistant.tsx    # Main AI chat interface
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utility functions & Gemini API helpers
+│   └── main.tsx             # App entry point
+├── index.html
+├── vite.config.ts
+├── tailwind.config.ts
+└── package.json
+🌍 Deployment
+VioraAI is deployed on Vercel with zero-config CI/CD.
+# Deploy via Vercel CLI
+npx vercel --prod
+Or connect your GitHub repo to vercel.com for automatic deployments on every push.
+🧪 Use Cases
+📚 Education — Step-by-step explanations, concept breakdowns, homework assistance
+💼 Business — Email drafting, document summaries, brainstorming, decision support
+🏠 Everyday — Quick answers, recommendations, writing help, general knowledge
+📄 License
+MIT License — open source and free to use.
+�
+Built with React · TypeScript · Tailwind CSS · Google Gemini API
+VioraAI — Hackathon Submission, Problem Statement 4
